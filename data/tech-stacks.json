@@ -1,0 +1,24 @@
+[
+    {
+      "category": "Frontend",
+      "items": [
+        "Next.js", "Tailwind CSS", "Javascript", "Typescript", "React",
+        "Nuxt.js", "Vite", "Shadcn", "Figma"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        "Node.js", "Flask", "Supabase", "Firebase", "Redis",
+        "PHP", "Python", "Express.js", "MongoDB"
+      ]
+    },
+    {
+      "category": "Devtools",
+      "items": [
+        "Cursor", "VSCode", "AWS", "MS Azure", "Cloudfare",
+        "Vercel", "Heroku"
+      ]
+    }
+  ]
+  
