@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Layers, MoveUpRight } from "lucide-react";
 import techStacks from "@/data/tech-stacks.json";
 
-export function TechStacks() {
+export function TechStacksCard() {
   return (
-    <Card className="gap-2">
+    <Card className="col-span-full gap-2">
       <CardHeader>
         <CardTitle className="flex justify-between">
           <span className="flex gap-2 font-semibold items-center">
@@ -13,7 +13,7 @@ export function TechStacks() {
             Tech Stacks
           </span>
           <Link
-            href="#"
+            href="tech-stacks"
             className="hover:text-foreground/90 duration-300 p-0 cursor-pointer text-xs flex gap-1 text-foreground/70 items-center"
           >
             View all
@@ -22,7 +22,7 @@ export function TechStacks() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
-        {techStacks.map((stack) => (
+        {techStacks.slice(0, 3).map((stack) => (
           <div key={stack.category} className="flex flex-col gap-2">
             <span className="text-sm font-bold">{stack.category}</span>
 
@@ -40,12 +40,12 @@ export function TechStacks() {
 
             {/* Medium and up: show all */}
             <ul className="hidden md:flex flex-wrap gap-2">
-              {stack.items.map((tech) => (
+              {stack.items.slice(0, 10).map((tech) => (
                 <li
                   key={tech}
                   className="border border-white/70 rounded-sm px-2 py-1 text-xs"
                 >
-                  {tech}
+                  {tech.replace(/[0-9.]/g, "")}
                 </li>
               ))}
             </ul>

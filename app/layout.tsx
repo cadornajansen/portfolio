@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} relative flex font-sans antialiased w-full min-h-dvh`}
+        className={`${inter.variable} relative flex font-sans antialiased w-full min-h-dvh py-10 px-5 md:px-20 xl:px-70 `}
       >
         <ThemeProvider
           attribute="class"
@@ -33,7 +33,6 @@ export default function RootLayout({
           {children}
           <GridBackground />
         </ThemeProvider>
-        <Toaster />
       </body>
     </html>
   );

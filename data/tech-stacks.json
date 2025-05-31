@@ -1,24 +1,68 @@
 [
-    {
-      "category": "Frontend",
-      "items": [
-        "Next.js", "Tailwind CSS", "Javascript", "Typescript", "React",
-        "Nuxt.js", "Vite", "Shadcn", "Figma"
-      ]
-    },
-    {
-      "category": "Backend",
-      "items": [
-        "Node.js", "Flask", "Supabase", "Firebase", "Redis",
-        "PHP", "Python", "Express.js", "MongoDB"
-      ]
-    },
-    {
-      "category": "Devtools",
-      "items": [
-        "Cursor", "VSCode", "AWS", "MS Azure", "Cloudfare",
-        "Vercel", "Heroku"
-      ]
-    }
-  ]
-  
+  {
+    "category": "Frontend",
+    "items": [
+      "Typescript",
+      "Next.JS2",
+      "TailwindCSS",
+      "Framer",
+      "Javascript",
+      "Figma",
+      "Nuxt.JS",
+      "React.JS",
+      "ViteJS",
+      "Astro",
+      "ChakraUI",
+      "ShadcnUI",
+      "CSS3",
+      "HTML"
+    ]
+  },
+  {
+    "category": "Backend",
+    "items": [
+      "Node.JS",
+      "Express.JS",
+      "Django",
+      "Flask",
+      "Firebase",
+      "Supabase",
+      "BunJS",
+      "PHP",
+      "Python",
+      "C++",
+      "PyTorch",
+      "Streamlit",
+      "Prisma",
+      "Zod"
+    ]
+  },
+  {
+    "category": "DevOps & Tools",
+    "items": [
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Netlify",
+      "GCloud",
+      "Azure",
+      "Edge",
+      "Redis"
+    ]
+  },
+  {
+    "category": "Developer Tools & APIs",
+    "items": [
+      "Auth0",
+      "Babel",
+      "Copilot Github",
+      "Prettier",
+      "GraphQL",
+      "Insomnia",
+      "React Query",
+      "Pinia",
+      "Zod",
+      "Ps"
+    ]
+  }
+]
