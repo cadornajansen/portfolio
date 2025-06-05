@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 import type { ImageResponseOptions } from 'next/server'
-import { getPost } from '@/lib/posts'
+import { getPostMeta } from '@/lib/posts'
 
 // Route segment config
 export const runtime = 'edge'
@@ -22,7 +22,7 @@ interface RouteParams {
 
 // Image generation
 export default async function Image({ params }: RouteParams): Promise<ImageResponse> {
-  const post = await getPost(params.slug)
+  const post = await getPostMeta(params.slug)
 
   const interSemiBold = await fetch(
     new URL('./inter.ttf', import.meta.url)
@@ -41,9 +41,9 @@ export default async function Image({ params }: RouteParams): Promise<ImageRespo
           justifyContent: 'center',
         }}
       >
-        <div style={{ margin: 25 }}>{post.frontmatter.title}</div>
+        <div style={{ margin: 25 }}>{post.title}</div>
         <div style={{ margin: 25, fontSize: 32 }}>
-          {post.frontmatter.description}
+          {post.description}
         </div>
       </div>
     ),
@@ -60,3 +60,4 @@ export default async function Image({ params }: RouteParams): Promise<ImageRespo
     } satisfies ImageResponseOptions
   )
 }
+
