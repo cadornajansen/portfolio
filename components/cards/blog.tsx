@@ -41,7 +41,7 @@ export async function BlogCard({ searchParams }: BlogPostsPageProps) {
           </Link>
         </CardTitle>
       </CardHeader>
-      <CardContent className="grid grid-cols-1 gap-2">
+      <CardContent className="grid grid-cols-1 gap-4">
         {posts.map((post) => (
           <Link
             href={`/blog/${post.slug}`}

@@ -1,21 +1,24 @@
-import fs from "fs";
-import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import slugs from "@/data/blog-posts.json";
 
-const CONTENT_DIR = path.join(process.cwd(), "content");
+const GITHUB_RAW_BASE =
+  "https://raw.githubusercontent.com/cadornajansen/portfolio/main/content";
 
-export function loadPost(slug: string): string {
+export async function loadPost(slug: string): Promise<string> {
   const filename = slug.endsWith(".mdx") ? slug : `${slug}.mdx`;
-  const filePath = path.join(CONTENT_DIR, filename);
+  const url = `${GITHUB_RAW_BASE}/${filename}`;
 
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`Post not found: ${filename}`);
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`Post not found at ${url}`);
   }
 
-  return fs.readFileSync(filePath, "utf8");
+  return await res.text();
 }
+
+// MDX component overrides
 const mdxComponents = {
   code: ({
     className,
@@ -42,8 +45,9 @@ const mdxComponents = {
   },
 };
 
+// Load a single post
 export async function getPost(slug: string) {
-  const source = loadPost(slug);
+  const source = await loadPost(slug);
 
   const { content, frontmatter } = await compileMDX<{
     title: string;
@@ -77,19 +81,10 @@ export async function getPosts({
   limit = 3,
   tags,
 }: GetPostsOptions = {}) {
-  const files = fs
-    .readdirSync(CONTENT_DIR)
-    .filter((file) => file.endsWith(".mdx"));
-
   const posts = await Promise.all(
-    files.map(async (filename) => {
-      const slug = filename.replace(/\.mdx$/, "");
+    slugs.map(async (slug) => {
       const { frontmatter } = await getPost(slug);
-
-      return {
-        slug,
-        frontmatter,
-      };
+      return { slug, frontmatter };
     })
   );
 
