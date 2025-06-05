@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🚀 My Developer Portfolio
 
-First, run the development server:
+Welcome to my personal portfolio — a modern, minimal, and responsive site built with [Next.js](https://nextjs.org/), MDX, and Tailwind CSS. This project showcases my skills, projects, blog posts, and a clean UI that reflects who I am as a developer.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🔗 **Live Demo**: [next-portfolio-sigma-neon.vercel.app](https://next-portfolio-sigma-neon.vercel.app)
+
+---
+
+## 🧩 Features
+
+- ⚡ **Built with Next.js App Router**
+- 📄 **Blog system powered by MDX**
+- 🎨 **Styled with Tailwind CSS + custom components**
+- 💡 **Syntax Highlighting with react-syntax-highlighter**
+- 🌐 **Hosted on Vercel**
+- 🧠 **Content slugs managed via `data/posts.json` for static routing**
+- 📁 Organized project structure (components, lib, app, etc.)
+
+---
+
+## 📁 Folder Structure
+
+```
+.
+├── app/                # Routes & pages
+├── components/         # UI components
+├── content/            # MDX blog posts
+├── data/posts.json     # List of blog slugs
+├── lib/                # Utility functions
+├── public/             # Static assets
+├── styles/             # Global styles
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Next.js 14](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [MDX via `next-mdx-remote`](https://github.com/hashicorp/next-mdx-remote)
+- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+- [Vercel Hosting](https://vercel.com/)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧠 Lessons Learned
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- How to statically generate blog posts with MDX
+- Managing slugs and metadata without a CMS
+- Optimizing syntax highlighting and styling
+- GitHub-based content management via raw MDX or JSON
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📬 Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you like this project or want to collaborate:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- GitHub: [cadornajansen](https://github.com/cadornajansen)
+- Email: your@email.com
+
+---
+
+## ⭐️ Show some love
+
+If you found this useful, consider starring the repo ⭐ and sharing it!
