@@ -1,5 +1,6 @@
 export const revalidate = 1;
 
+import type { Metadata } from "next";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { TechStacksCard } from "@/components/cards/tech-stacks";
@@ -12,6 +13,17 @@ import { Projects } from "@/components/cards/projects";
 import { BlogCard } from "@/components/cards/blog";
 import { ContactCard } from "@/components/cards/contact";
 import { ContactButton } from "@/components/contact-button";
+
+export const metadata: Metadata = {
+  title: "Home - My Developer Portfolio",
+  description:
+    "Welcome to my personal portfolio. Discover my projects, skills, and professional journey.",
+  openGraph: {
+    title: "Home - My Developer Portfolio",
+    description:
+      "Welcome to my personal portfolio. Discover my projects, skills, and professional journey.",
+  },
+};
 
 export default async function Home() {
   return (

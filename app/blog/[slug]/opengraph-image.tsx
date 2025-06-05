@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og'
 import type { ImageResponseOptions } from 'next/server'
+import { getPost } from '@/lib/posts'
 
 // Route segment config
 export const runtime = 'edge'
@@ -12,21 +13,17 @@ export const size = {
 }
 export const contentType = 'image/png'
 
-// Define dynamic titles
-const titles: Record<string, string> = {
-  first: 'Hello First!',
-  second: 'Hello Second!',
-}
-
 // Define params type
 interface RouteParams {
   params: {
-    slug: keyof typeof titles
+    slug: string
   }
 }
 
 // Image generation
 export default async function Image({ params }: RouteParams): Promise<ImageResponse> {
+  const post = await getPost(params.slug)
+
   const interSemiBold = await fetch(
     new URL('./inter.ttf', import.meta.url)
   ).then((res) => res.arrayBuffer())
@@ -44,9 +41,9 @@ export default async function Image({ params }: RouteParams): Promise<ImageRespo
           justifyContent: 'center',
         }}
       >
-        <div style={{ margin: 25 }}>{titles[params.slug]}</div>
+        <div style={{ margin: 25 }}>{post.frontmatter.title}</div>
         <div style={{ margin: 25, fontSize: 32 }}>
-          This is a desc of the blog post
+          {post.frontmatter.description}
         </div>
       </div>
     ),
