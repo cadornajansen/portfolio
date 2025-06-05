@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useState } from "react";
 import { ArrowUpLeft, X } from "lucide-react";
 import Link from "next/link";
