@@ -1,12 +1,12 @@
 import { ImageResponse } from 'next/og'
 import type { ImageResponseOptions } from 'next/server'
-import { getPostMeta } from '@/lib/posts'
+import { getPostMeta } from '@/lib/posts-meta'
 
 // Route segment config
 export const runtime = 'edge'
 
 // Image metadata
-export const alt = 'About Acme'
+export const alt = 'Portfolio'
 export const size = {
   width: 1200,
   height: 630,
