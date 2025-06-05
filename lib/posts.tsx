@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
-import { H1, H2, H3, H4, H5, H6 } from "@/components/ui/headings";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -15,26 +16,43 @@ export function loadPost(slug: string): string {
 
   return fs.readFileSync(filePath, "utf8");
 }
+const mdxComponents = {
+  code: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLElement> & { children?: React.ReactNode }) => {
+    const match = /language-(\w+)/.exec(className || "");
+    return match ? (
+      <SyntaxHighlighter
+        language={match[1]}
+        // @ts-expect-error: oneDark has incompatible type but works fine at runtime
+        style={oneDark}
+        PreTag="div"
+        className="rounded-md my-4 text-sm"
+        {...props}
+      >
+        {String(children).replace(/\n$/, "")}
+      </SyntaxHighlighter>
+    ) : (
+      <code className="bg-muted px-1 py-0.5 rounded text-sm" {...props}>
+        {children}
+      </code>
+    );
+  },
+};
 
 export async function getPost(slug: string) {
   const source = loadPost(slug);
 
   const { content, frontmatter } = await compileMDX<{
     title: string;
-    description: string,
+    description: string;
     date: string;
     tags?: string[];
-    [key: string]: any;
   }>({
     source,
-    components: {
-      h1: (props) => <H1 {...props} />,
-      h2: (props) => <H2 {...props} />,
-      h3: (props) => <H3 {...props} />,
-      h4: (props) => <H4 {...props} />,
-      h5: (props) => <H5 {...props} />,
-      h6: (props) => <H6 {...props} />,
-    },
+    components: mdxComponents,
     options: {
       parseFrontmatter: true,
     },

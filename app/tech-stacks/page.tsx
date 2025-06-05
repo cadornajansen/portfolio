@@ -1,6 +1,6 @@
 import StackIcon from "tech-stack-icons";
 import techStacks from "@/data/tech-stacks.json";
-import { ArrowUpLeft, Layers2 } from "lucide-react";
+import { ArrowUpLeft } from "lucide-react";
 import Link from "next/link";
 
 const techOverrides: Record<

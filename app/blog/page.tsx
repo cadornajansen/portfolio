@@ -7,27 +7,26 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardContent,
   CardTitle,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator";
 
-interface BlogPostsPageProps {
-  searchParams: {
+export default async function BlogPostsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{
     tags?: string;
     order?: "newest" | "oldest";
     page?: string;
     limit?: string;
-  };
-}
+  }>;
+}) {
+  const params = await searchParams;
 
-export default async function BlogPostsPage({
-  searchParams,
-}: BlogPostsPageProps) {
-  const tags = searchParams.tags?.split(",");
-  const order = searchParams.order ?? "newest";
-  const page = Number(searchParams.page ?? 1);
-  const limit = Number(searchParams.limit ?? 3);
+  const tags = params.tags?.split(",");
+  const order = params.order ?? "newest";
+  const page = Number(params.page ?? 1);
+  const limit = Number(params.limit ?? 3);
 
   const { posts, pageCount } = await getPosts({
     tags,
@@ -51,7 +50,7 @@ export default async function BlogPostsPage({
           Stay up to date with most recent posts
         </div>
       </header>
-      <Separator  />
+      <Separator />
 
       <div className="mb-8">
         Display&nbsp;

@@ -21,7 +21,7 @@ export async function generateMetadata({
   try {
     const { frontmatter } = await getPost(slug);
     return frontmatter;
-  } catch (e) {
+  } catch {
     return {};
   }
 }
@@ -36,25 +36,27 @@ export default async function BlogPage({
 
   try {
     post = await getPost(slug);
-  } catch (e) {
+  } catch {
     notFound();
   }
 
   return (
-    <article className="prose dark:prose-invert">
-      {post.content}
-      <div className="w-full bg-muted px-4 py-2 rounded-md flex space-x-2 mt-2 items-center">
+    <div className="flex flex-col items-center justify-center w-full">
+      <article className="prose-sm dark:prose-invert prose md:prose-base xl:prose-lg max-w-none w-full text-sm leading-relaxed">
+        {post.content}
+      </article>
+      <div className="mt-8 w-full bg-muted px-4 py-2 rounded-md flex gap-2 items-center">
         <span className="font-bold text-lg">Tags:</span>
         {post?.frontmatter?.tags?.map((tag: string) => (
           <Link
             key={tag}
             href={`/blog/?tags=${tag}`}
-            className="dark:text-gray-400 text-gray-500"
+            className="dark:text-gray-400 text-gray-500 text-sm"
           >
             #{tag}
           </Link>
         ))}
       </div>
-    </article>
+    </div>
   );
 }

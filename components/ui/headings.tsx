@@ -10,7 +10,7 @@ export function H1({ children, ...props }: React.HTMLAttributes<HTMLHeadingEleme
 
 export function H2({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2 className="text-3xl font-semibold mt-3 mb-2" {...props}>
+    <h2 className="text-2xl font-semibold mt-3 mb-2" {...props}>
       {children}
     </h2>
   );
@@ -18,7 +18,7 @@ export function H2({ children, ...props }: React.HTMLAttributes<HTMLHeadingEleme
 
 export function H3({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3 className="text-2xl font-medium mt-2 mb-1" {...props}>
+    <h3 className="text-xl font-medium mt-2 mb-1" {...props}>
       {children}
     </h3>
   );
