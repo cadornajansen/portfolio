@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import StackIcon from "tech-stack-icons";
 import techStacks from "@/data/tech-stacks.json";
 import { ArrowUpLeft } from "lucide-react";
@@ -14,6 +15,15 @@ const techOverrides: Record<
 };
 
 const unsupportedIcons = new Set(["Express.JS", "Vercel"]);
+
+export const metadata: Metadata = {
+  title: "Tech Stacks - My Developer Portfolio",
+  description: "A showcase of technologies and tools I work with.",
+  openGraph: {
+    title: "Tech Stacks - My Developer Portfolio",
+    description: "A showcase of technologies and tools I work with.",
+  },
+};
 
 export default function TechStacks() {
   return (

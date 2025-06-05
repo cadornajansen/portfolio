@@ -1,5 +1,6 @@
 "use client";
 
+import type { Metadata } from "next";
 import { useState } from "react";
 import { ArrowUpLeft, X } from "lucide-react";
 import Link from "next/link";
@@ -103,6 +104,7 @@ export default function TechStacks() {
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 33vw"
+                placeholder="blur"
               />
             </div>
             <div className="text-sm">
@@ -140,6 +142,7 @@ export default function TechStacks() {
                   alt={selectedImage.title}
                   fill
                   className="object-contain rounded-lg"
+                  placeholder="blur"
                 />
               </Link>
             </div>
