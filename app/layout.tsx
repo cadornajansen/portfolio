@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GridBackground } from "@/components/grid-background";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({
   variable: "--font-inter-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
           <GridBackground />
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights/>
       </body>
     </html>
   );
