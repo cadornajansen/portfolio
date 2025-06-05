@@ -11,7 +11,7 @@ Welcome to my personal portfolio — a modern, minimal, and responsive site buil
 
 - ⚡ **Built with Next.js App Router**
 - 📄 **Blog system powered by MDX**
-- 🎨 **Styled with Tailwind CSS + custom components**
+- 🎨 **Styled with Tailwind CSS + ShadCN UI**
 - 💡 **Syntax Highlighting with react-syntax-highlighter**
 - 🌐 **Hosted on Vercel**
 - 🧠 **Content slugs managed via `data/posts.json` for static routing**
@@ -35,7 +35,7 @@ Welcome to my personal portfolio — a modern, minimal, and responsive site buil
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Teck Stacks Used
 
 - [Next.js 14](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -46,7 +46,7 @@ Welcome to my personal portfolio — a modern, minimal, and responsive site buil
 
 ---
 
-## 🧠 Lessons Learned
+## 🧠 Experience Gained
 
 - How to statically generate blog posts with MDX
 - Managing slugs and metadata without a CMS
@@ -59,9 +59,9 @@ Welcome to my personal portfolio — a modern, minimal, and responsive site buil
 
 If you like this project or want to collaborate:
 
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- Facebook: [Jansen Cadorna](https://facebook.com/jansencadornaviray)
 - GitHub: [cadornajansen](https://github.com/cadornajansen)
-- Email: your@email.com
+- Email: jansencadorna5@email.com
 
 ---
 
