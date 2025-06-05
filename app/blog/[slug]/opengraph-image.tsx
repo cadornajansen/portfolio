@@ -24,10 +24,6 @@ interface RouteParams {
 export default async function Image({ params }: RouteParams): Promise<ImageResponse> {
   const post = await getPostMeta(params.slug)
 
-  const interSemiBold = await fetch(
-    new URL('./inter.ttf', import.meta.url)
-  ).then((res) => res.arrayBuffer())
-
   return new ImageResponse(
     (
       <div
@@ -49,14 +45,6 @@ export default async function Image({ params }: RouteParams): Promise<ImageRespo
     ),
     {
       ...size,
-      fonts: [
-        {
-          name: 'Inter',
-          data: interSemiBold,
-          style: 'normal',
-          weight: 400,
-        },
-      ],
     } satisfies ImageResponseOptions
   )
 }
