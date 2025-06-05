@@ -75,15 +75,6 @@ const imageData = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Certifications - My Developer Portfolio",
-  description: "Browse the certifications and qualifications achieved.",
-  openGraph: {
-    title: "Certifications - My Developer Portfolio",
-    description: "Browse the certifications and qualifications achieved.",
-  },
-};
-
 export default function TechStacks() {
   const [selectedImage, setSelectedImage] = useState<
     null | (typeof imageData)[0]
